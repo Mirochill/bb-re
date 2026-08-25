@@ -8,7 +8,7 @@ jobs:
       - name: Run blutter
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq python3-pip cmake ninja-build g++ git zip unzip > /dev/null
+          sudo apt-get install -y -qq python3-pip cmake ninja-build g++ git zip unzip pkg-config libcapstone-dev > /dev/null
           git clone --depth 1 https://github.com/worawit/blutter
           pip3 install -q requests pyelftools
           curl -sL -o app.apk "https://beggibeggi.com/download/beggi-beggi.apk?v=1781649421"
@@ -20,4 +20,5 @@ jobs:
         with:
           name: blutter-out
           path: out
+
 
